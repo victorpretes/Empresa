@@ -1,0 +1,6 @@
+# robots.txt — ajuste quando o site for publicado
+User-agent: *
+Allow: /
+
+# Descomente e ajuste com o domínio real:
+# Sitemap: https://www.SEUDOMINIO.com.br/sitemap.xml

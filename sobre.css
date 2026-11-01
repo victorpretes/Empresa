@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ZenIoT — sobre.css (página Sobre nós)
+   ========================================================================== */
+
+/* História */
+.story { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 6vw, 72px); align-items: start; }
+.story__box { padding: clamp(24px, 4vw, 40px); border-radius: var(--radius); border: 1px dashed rgba(251, 191, 36, 0.45); background: rgba(251, 191, 36, 0.04); }
+.story__box p { color: var(--c-muted); }
+.story__box p + p { margin-top: 14px; }
+.story__box .badge { margin-bottom: 18px; }
+@media (max-width: 859px) { .story { grid-template-columns: 1fr; } }
+
+/* Missão, visão e valores */
+.mvv .card { padding: 32px; }
+.mvv .values { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.mvv .values li { padding: 5px 12px; border-radius: 999px; font-size: 0.82rem; border: 1px solid var(--c-line-strong); background: rgba(34, 211, 238, 0.06); }
+
+/* Fundadores: 7 cards — 4 + 3 centralizados em telas largas */
+.team { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
+.founder { grid-column: span 3; text-align: center; padding: 26px 22px; }
+.founder:nth-child(5) { grid-column: 2 / span 3; }
+.founder:nth-child(6) { grid-column: 5 / span 3; }
+.founder:nth-child(7) { grid-column: 8 / span 3; }
+.founder__photo {
+  width: 112px; height: 112px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center; overflow: hidden; position: relative;
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.3), rgba(34, 211, 238, 0.12));
+  border: 2px solid var(--c-line-strong);
+}
+.founder__photo img { width: 100%; height: 100%; object-fit: cover; }
+.founder__photo .placeholder-icon { width: 46px; height: 46px; opacity: 0.85; }
+.founder__num { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-cyan); }
+.founder h3 { margin: 6px 0 4px; font-size: 1.08rem; }
+.founder__role { color: var(--c-cyan); font-size: 0.88rem; font-weight: 500; }
+.founder p.founder__bio { margin-top: 12px; font-size: 0.88rem; }
+@media (max-width: 1023px) {
+  .founder, .founder:nth-child(n) { grid-column: span 4; }
+  .founder:nth-child(7) { grid-column: 5 / span 4; }
+  .founder:nth-child(5) { grid-column: span 4; }
+  .founder:nth-child(6) { grid-column: span 4; }
+}
+@media (max-width: 719px) {
+  .founder, .founder:nth-child(n) { grid-column: span 6; }
+  .founder:nth-child(7) { grid-column: 4 / span 6; }
+}
+@media (max-width: 479px) {
+  .founder, .founder:nth-child(n) { grid-column: 1 / -1; }
+}
+
+/* Linha do tempo: jeito de trabalhar */
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; position: relative; }
+.step { position: relative; padding: 26px 20px; border-radius: var(--radius); border: 1px solid var(--c-line); background: var(--grad-card); transition: border-color 0.3s, transform 0.3s var(--ease); }
+.step:hover { border-color: var(--c-line-strong); transform: translateY(-4px); }
+.step__num {
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 18px;
+  font-weight: 800; color: #04121a; background: var(--grad-accent);
+}
+.step h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.step p { color: var(--c-muted); font-size: 0.9rem; }
+@media (max-width: 1023px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 559px) { .steps { grid-template-columns: 1fr; } }

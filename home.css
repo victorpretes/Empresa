@@ -1,0 +1,59 @@
+/* ==========================================================================
+   ZenIoT — home.css (estilos específicos da página inicial, index.html)
+   ========================================================================== */
+
+/* Hero */
+.hero { padding: clamp(48px, 8vw, 110px) 0 clamp(64px, 9vw, 120px); overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; width: 640px; height: 640px; right: -180px; top: -200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.35), transparent 65%); pointer-events: none;
+}
+.hero::after { z-index: 0; }
+.hero__inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.hero__tag {
+  display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; margin-bottom: 26px; border-radius: 999px;
+  border: 1px solid var(--c-line-strong); background: rgba(34, 211, 238, 0.07); font-size: 0.85rem; font-weight: 600; color: var(--c-cyan);
+}
+.hero__tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--c-cyan); box-shadow: 0 0 12px var(--c-cyan); animation: pulse 2.4s ease-in-out infinite; }
+.hero h1 { margin-bottom: 22px; }
+.hero .lead { margin-bottom: 36px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.hero__visual { position: relative; aspect-ratio: 1 / 1; max-width: 520px; width: 100%; margin-inline: auto; }
+.hero__visual svg { width: 100%; height: 100%; overflow: visible; }
+.net-line { stroke: url(#hero-grad); stroke-width: 1.6; stroke-dasharray: 5 7; fill: none; opacity: 0.7; animation: dash 22s linear infinite; }
+.net-node { fill: #101827; stroke: url(#hero-grad); stroke-width: 2; }
+.net-dot { fill: var(--c-cyan); animation: pulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.net-dot:nth-of-type(2n) { animation-delay: -1s; }
+.net-dot:nth-of-type(3n) { animation-delay: -2s; }
+.net-ring { fill: none; stroke: var(--c-line-strong); stroke-width: 1; }
+.net-core { animation: float 7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+
+@keyframes pulse { 0%, 100% { opacity: 0.5; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes dash { to { stroke-dashoffset: -400; } }
+@keyframes float { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(6px); } }
+
+@media (max-width: 959px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__visual { max-width: 380px; order: -1; }
+}
+
+/* Apresentação */
+.intro { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.intro p + p { margin-top: 16px; }
+.intro .btn { margin-top: 28px; }
+.stat-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.stat { padding: 24px; border-radius: var(--radius); border: 1px solid var(--c-line); background: var(--grad-card); }
+.stat strong { display: block; font-size: 2.2rem; line-height: 1; font-weight: 800; margin-bottom: 8px; }
+.stat span { color: var(--c-muted); font-size: 0.92rem; }
+@media (max-width: 859px) { .intro { grid-template-columns: 1fr; } }
+
+/* Serviços (cards compactos) */
+.service-card .link-more { margin-top: 18px; }
+
+/* Diferenciais */
+.diff { display: flex; gap: 18px; align-items: flex-start; padding: 24px; border-radius: var(--radius); border: 1px solid var(--c-line); background: rgba(16, 24, 39, 0.5); transition: border-color 0.3s, transform 0.3s var(--ease); }
+.diff:hover { border-color: var(--c-line-strong); transform: translateY(-3px); }
+.diff h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.diff p { color: var(--c-muted); font-size: 0.93rem; }
+.diff .icon-box { flex: none; }

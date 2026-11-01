@@ -1,0 +1,22 @@
+/* ==========================================================================
+   ZenIoT — servicos.css (página Serviços)
+   ========================================================================== */
+
+.service-full { display: flex; flex-direction: column; padding: 30px; scroll-margin-top: calc(var(--header-h) + 20px); }
+.service-full:target { border-color: var(--c-cyan); box-shadow: var(--glow); }
+.service-full h3 { margin-top: 20px; font-size: 1.3rem; }
+.service-full > p { margin-top: 10px; }
+.benefits { margin: 20px 0 26px; display: grid; gap: 10px; }
+.benefits h4 { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 4px; }
+.benefits li { position: relative; padding-left: 26px; color: var(--c-text); font-size: 0.93rem; }
+.benefits li::before {
+  content: ""; position: absolute; left: 0; top: 0.45em; width: 14px; height: 14px; border-radius: 50%;
+  background: rgba(34, 211, 238, 0.15); border: 1px solid var(--c-cyan);
+}
+.benefits li::after { content: ""; position: absolute; left: 4.5px; top: calc(0.45em + 3px); width: 5px; height: 3px; border-left: 1.6px solid var(--c-cyan); border-bottom: 1.6px solid var(--c-cyan); transform: rotate(-45deg); }
+.service-full .btn { margin-top: auto; align-self: flex-start; }
+
+.notice {
+  display: flex; gap: 14px; align-items: flex-start; padding: 18px 22px; border-radius: var(--radius-sm);
+  border: 1px solid var(--c-line); background: rgba(16, 24, 39, 0.6); color: var(--c-muted); font-size: 0.92rem; margin-top: 40px;
+}

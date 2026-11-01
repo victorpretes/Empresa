@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projetos — ZenIoT</title>
+  <meta name="description" content="Conheça a galeria de projetos da ZenIoT, com filtros por categoria e detalhes de cada solução (sites, sistemas, design e automações).">
+  <meta name="theme-color" content="#080B12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projetos — ZenIoT">
+  <meta property="og:description" content="Conheça a galeria de projetos da ZenIoT, com filtros por categoria e detalhes de cada solução (sites, sistemas, design e automações).">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <!-- Fonte Inter (se estiver offline, usa a fonte do sistema). Para uso local, coloque os arquivos em assets/fonts/ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projetos.css">
+  <script src="js/projetos-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/projetos.js" defer></script>
+</head>
+<body>
+<noscript><div class="noscript-msg">Ative o JavaScript para ver todos os recursos deste site (menu, filtros e formulário).</div></noscript>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="ZenIoT — página inicial">
+      <img src="assets/icons/logo.svg" alt="" width="34" height="34">
+      <span>Zen<b>IoT</b></span>
+    </a>
+    <nav class="nav" id="primary-nav" aria-label="Navegação principal" data-nav>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html">Início</a></li>
+        <li><a class="nav__link" href="sobre.html">Sobre nós</a></li>
+        <li><a class="nav__link" href="servicos.html">Serviços</a></li>
+        <li><a class="nav__link" href="projetos.html" aria-current="page">Projetos</a></li>
+        <li><a class="nav__link" href="orcamento.html">Orçamento</a></li>
+      </ul>
+      <a class="btn btn--primary btn--sm nav__cta" href="orcamento.html">Solicitar orçamento</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu" data-nav-toggle>
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+</header>
+<main id="conteudo" tabindex="-1">
+<section class="page-hero bg-grid" aria-labelledby="page-title">
+  <div class="container">
+    <p class="eyebrow">Projetos</p>
+    <h1 id="page-title">Soluções que <span class="text-gradient">desenvolvemos.</span></h1>
+    <p class="lead">Explore a galeria e conheça o tipo de solução criada pela ZenIoT. Use os filtros para navegar por categoria.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:24px" aria-label="Galeria de projetos">
+  <div class="container">
+    <p class="notice" style="margin:0 0 32px"><span class="badge badge--cyan">Aviso</span><span>Os projetos marcados como “Demonstração conceitual” são exemplos ilustrativos, não clientes reais. Para cadastrar projetos reais, edite <code>js/projetos-data.js</code>.</span></p>
+    <div class="filters" id="project-filters" role="group" aria-label="Filtrar projetos por categoria"></div>
+    <p class="filters__status" id="filter-status" role="status" aria-live="polite"></p>
+    <div class="grid grid--3" id="project-grid"></div>
+    <noscript><p class="muted">Ative o JavaScript para visualizar a galeria de projetos.</p></noscript>
+  </div>
+</section>
+
+<dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+  <button type="button" class="modal__close" data-close-modal aria-label="Fechar detalhes do projeto"><span aria-hidden="true">&times;</span></button>
+  <div class="modal__scroll" id="modal-body"></div>
+</dialog>
+<section class="section" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2 id="cta-title">Tem uma ideia? Vamos tirar ela do papel.</h2>
+      <p>Conte para nós o que a sua empresa precisa. Analisamos o seu caso e retornamos com uma proposta personalizada.</p>
+      <a class="btn btn--primary" href="orcamento.html">Solicitar orçamento <span class="btn__arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="ZenIoT — página inicial"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>Zen<b>IoT</b></span></a>
+        <p>Agência digital fundada por sete criadores, dedicada a transformar ideias em soluções digitais personalizadas.</p>
+      </div>
+      <nav aria-label="Rodapé: navegação">
+        <h2 class="footer__title">Navegação</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html">Projetos</a></li>
+          <li><a href="orcamento.html">Orçamento</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Rodapé: serviços">
+        <h2 class="footer__title">Serviços</h2>
+        <ul class="footer__list">
+          <li><a href="servicos.html#sites">Desenvolvimento de sites</a></li>
+          <li><a href="servicos.html#sistemas">Sistemas web</a></li>
+          <li><a href="servicos.html#uiux">Design UI/UX</a></li>
+          <li><a href="servicos.html#automacao">Automação de processos</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer__title">Contato</h2>
+        <!-- PERSONALIZAR: adicione aqui e-mail, telefone e redes sociais oficiais quando existirem.
+             Exemplo: <li><a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a></li> -->
+        <ul class="footer__list">
+          <li><a href="orcamento.html">Fale com a gente pelo formulário</a></li>
+        </ul>
+        <p class="footer__note" style="margin-top:14px">Canais de contato e redes sociais oficiais serão divulgados em breve.</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> ZenIoT. Todos os direitos reservados.</p>
+      <p>Feito com HTML, CSS e JavaScript.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

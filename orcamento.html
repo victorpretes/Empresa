@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitar orçamento — ZenIoT</title>
+  <meta name="description" content="Solicite um orçamento personalizado à ZenIoT. Conte o que sua empresa precisa e receba uma proposta sob medida.">
+  <meta name="theme-color" content="#080B12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solicitar orçamento — ZenIoT">
+  <meta property="og:description" content="Solicite um orçamento personalizado à ZenIoT. Conte o que sua empresa precisa e receba uma proposta sob medida.">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <!-- Fonte Inter (se estiver offline, usa a fonte do sistema). Para uso local, coloque os arquivos em assets/fonts/ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/orcamento.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/orcamento.js" defer></script>
+</head>
+<body>
+<noscript><div class="noscript-msg">Ative o JavaScript para ver todos os recursos deste site (menu, filtros e formulário).</div></noscript>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="ZenIoT — página inicial">
+      <img src="assets/icons/logo.svg" alt="" width="34" height="34">
+      <span>Zen<b>IoT</b></span>
+    </a>
+    <nav class="nav" id="primary-nav" aria-label="Navegação principal" data-nav>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html">Início</a></li>
+        <li><a class="nav__link" href="sobre.html">Sobre nós</a></li>
+        <li><a class="nav__link" href="servicos.html">Serviços</a></li>
+        <li><a class="nav__link" href="projetos.html">Projetos</a></li>
+        <li><a class="nav__link" href="orcamento.html" aria-current="page">Orçamento</a></li>
+      </ul>
+      <a class="btn btn--primary btn--sm nav__cta" href="orcamento.html">Solicitar orçamento</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu" data-nav-toggle>
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+</header>
+<main id="conteudo" tabindex="-1">
+<section class="page-hero bg-grid" aria-labelledby="page-title">
+  <div class="container">
+    <p class="eyebrow">Orçamento</p>
+    <h1 id="page-title">Solicite um orçamento <span class="text-gradient">personalizado.</span></h1>
+    <p class="lead">Conte para nós o que a sua empresa precisa. Quanto mais detalhes, melhor poderemos entender o seu projeto.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px" aria-label="Formulário de orçamento">
+  <div class="container quote">
+    <aside class="quote__aside reveal" aria-label="Como funciona">
+      <h2>Como funciona</h2>
+      <ul>
+        <li><span class="icon-box" aria-hidden="true"><img src="assets/icons/message.svg" alt="" width="26" height="26" loading="lazy"></span><span><strong>1. Você nos conta a ideia</strong>Preencha o formulário com o máximo de informações.</span></li>
+        <li><span class="icon-box" aria-hidden="true"><img src="assets/icons/compass.svg" alt="" width="26" height="26" loading="lazy"></span><span><strong>2. Analisamos o seu caso</strong>Avaliamos escopo e viabilidade técnica.</span></li>
+        <li><span class="icon-box" aria-hidden="true"><img src="assets/icons/check.svg" alt="" width="26" height="26" loading="lazy"></span><span><strong>3. Retornamos com uma proposta</strong>Entramos em contato pelo e-mail informado.</span></li>
+      </ul>
+    </aside>
+
+    <div class="form-card reveal" style="--delay:.08s">
+      <form id="quote-form" novalidate>
+        <fieldset>
+          <legend><span aria-hidden="true">1</span> Dados da empresa</legend>
+          <div class="form-grid">
+        <div class="field">
+          <label for="empresa">Nome da empresa <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" type="text" id="empresa" name="empresa" autocomplete="organization" aria-required="true" aria-describedby="empresa-err">
+          <span class="error-msg" id="empresa-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="responsavel">Nome do responsável <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" type="text" id="responsavel" name="responsavel" autocomplete="name" aria-required="true" aria-describedby="responsavel-err">
+          <span class="error-msg" id="responsavel-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="email">E-mail para contato <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="nome@empresa.com.br" aria-required="true" aria-describedby="email-err">
+          <span class="error-msg" id="email-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone ou WhatsApp <span class="opt">(opcional)</span></label>
+          <input class="input" type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000" aria-describedby="telefone-err">
+          <span class="error-msg" id="telefone-err" aria-live="polite"></span>
+        </div>
+        <div class="field field--full">
+          <label for="site">Site atual da empresa <span class="opt">(opcional)</span></label>
+          <input class="input" type="text" id="site" name="site" autocomplete="url" placeholder="https://www.suaempresa.com.br" aria-describedby="site-err" inputmode="url">
+          <span class="error-msg" id="site-err" aria-live="polite"></span>
+        </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span aria-hidden="true">2</span> Informações do projeto</legend>
+          <div class="form-grid">
+        <div class="field">
+          <label for="servico">Tipo de serviço desejado <span class="req" aria-hidden="true">*</span></label>
+          <select class="select" id="servico" name="servico" aria-required="true" aria-describedby="servico-err"><option value="">Selecione...</option><option value="site">Criação de site</option><option value="sistema">Desenvolvimento de sistema</option><option value="aplicacao">Aplicação web</option><option value="uiux">Design UI/UX</option><option value="identidade">Identidade visual</option><option value="automacao">Automação</option><option value="consultoria">Consultoria</option><option value="outro">Outro</option><option value="indefinido">Ainda não sei qual serviço preciso</option></select>
+          <span class="error-msg" id="servico-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="projeto">Título ou nome do projeto <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" type="text" id="projeto" name="projeto" aria-required="true" aria-describedby="projeto-err">
+          <span class="error-msg" id="projeto-err" aria-live="polite"></span>
+        </div>
+        <div class="field field--full">
+          <label for="descricao">Conte para nós o que sua empresa precisa. <span class="req" aria-hidden="true">*</span></label>
+          <textarea class="textarea textarea--lg" id="descricao" name="descricao" rows="7" placeholder="Descreva sua ideia, o problema que deseja resolver, as funcionalidades que gostaria de implementar e qualquer informação que considere importante para o projeto." aria-required="true" aria-describedby="descricao-err desc-counter"></textarea>
+          <span class="counter" id="desc-counter" aria-live="off">0 / 3000</span><span class="error-msg" id="descricao-err" aria-live="polite"></span>
+        </div>
+        <div class="field field--full">
+          <label for="objetivos">Principais objetivos do projeto <span class="req" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="objetivos" name="objetivos" rows="3" placeholder="O que você espera alcançar com este projeto?" aria-required="true" aria-describedby="objetivos-err"></textarea>
+          <span class="error-msg" id="objetivos-err" aria-live="polite"></span>
+        </div>
+        <div class="field field--full">
+          <label for="publico">Público-alvo <span class="opt">(opcional)</span></label>
+          <textarea class="textarea" id="publico" name="publico" rows="3" placeholder="Quem vai usar ou se beneficiar da solução?" aria-describedby="publico-err"></textarea>
+          <span class="error-msg" id="publico-err" aria-live="polite"></span>
+        </div>
+        <div class="field field--full">
+          <label for="funcionalidades">Funcionalidades desejadas <span class="req" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="funcionalidades" name="funcionalidades" rows="3" placeholder="Liste os recursos que gostaria de ter (ex.: cadastro de clientes, pagamento online, painel de relatórios)." aria-required="true" aria-describedby="funcionalidades-err"></textarea>
+          <span class="error-msg" id="funcionalidades-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="prazo">Prazo pretendido <span class="req" aria-hidden="true">*</span></label>
+          <select class="select" id="prazo" name="prazo" aria-required="true" aria-describedby="prazo-err"><option value="">Selecione...</option><option value="urgente">O mais rápido possível</option><option value="1-mes">Até 1 mês</option><option value="1-3-meses">De 1 a 3 meses</option><option value="3-6-meses">De 3 a 6 meses</option><option value="flexivel">Prazo flexível</option></select>
+          <span class="error-msg" id="prazo-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="investimento">Faixa de investimento estimada <span class="opt">(opcional)</span></label>
+          <select class="select" id="investimento" name="investimento" aria-describedby="investimento-err"><option value="">Selecione...</option><option value="indefinido">Prefiro não informar</option><option value="ate-5k">Até R$ 5.000</option><option value="5k-15k">De R$ 5.000 a R$ 15.000</option><option value="15k-50k">De R$ 15.000 a R$ 50.000</option><option value="50k+">Acima de R$ 50.000</option></select>
+          <span class="error-msg" id="investimento-err" aria-live="polite"></span>
+        </div>
+          </div>
+        </fieldset>
+
+        <!-- Honeypot anti-robô: pessoas não veem nem preenchem este campo -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="contato_alternativo">Não preencha este campo</label>
+          <input type="text" id="contato_alternativo" name="contato_alternativo" tabindex="-1" autocomplete="off">
+        </div>
+
+        <fieldset>
+          <legend><span aria-hidden="true">3</span> Privacidade</legend>
+          <div class="field field--full consent-field">
+            <div class="consent">
+              <input type="checkbox" id="consentimento" name="consentimento" aria-required="true" aria-describedby="consentimento-err">
+              <label for="consentimento">Li e concordo com o tratamento dos meus dados pessoais para fins de contato e elaboração de orçamento, conforme o aviso de privacidade abaixo. <span class="req" aria-hidden="true">*</span></label>
+            </div>
+            <span class="error-msg" id="consentimento-err" aria-live="polite"></span>
+          </div>
+          <details class="privacy">
+            <summary>Aviso de privacidade (LGPD)</summary>
+            <div class="privacy__body">
+              <p><span class="badge">Modelo — revisar com assessoria jurídica antes de publicar</span></p>
+              <p><strong>Controlador:</strong> ZenIoT — [razão social, CNPJ e e-mail de contato do encarregado: preencher].</p>
+              <p><strong>Dados coletados:</strong> os informados neste formulário (empresa, responsável, e-mail, telefone, site e detalhes do projeto).</p>
+              <p><strong>Finalidade:</strong> responder à sua solicitação, elaborar o orçamento e manter contato comercial relacionado a ele.</p>
+              <p><strong>Base legal:</strong> consentimento e procedimentos preliminares relacionados a contrato (Lei nº 13.709/2018 — LGPD).</p>
+              <p><strong>Seus direitos:</strong> você pode solicitar confirmação, acesso, correção, anonimização, eliminação dos dados, informações sobre compartilhamento e revogação do consentimento, a qualquer momento, pelo canal de contato do controlador.</p>
+              <p><strong>Compartilhamento e retenção:</strong> [descrever os serviços usados para receber os formulários e por quanto tempo os dados serão mantidos: preencher].</p>
+            </div>
+          </details>
+        </fieldset>
+
+        <div class="form-actions">
+          <div id="form-status" class="status" tabindex="-1" aria-atomic="true"></div>
+          <button class="btn btn--primary btn--submit" type="submit" id="submit-btn"><span class="spinner" aria-hidden="true"></span><span class="btn__label">Solicitar meu orçamento</span></button>
+          <p class="hint">Campos com <span class="req">*</span> são obrigatórios.</p>
+        </div>
+      </form>
+      <noscript><p class="status status--warn is-shown">O formulário precisa de JavaScript para validar e enviar os dados. Ative o JavaScript no navegador.</p></noscript>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="ZenIoT — página inicial"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>Zen<b>IoT</b></span></a>
+        <p>Agência digital fundada por sete criadores, dedicada a transformar ideias em soluções digitais personalizadas.</p>
+      </div>
+      <nav aria-label="Rodapé: navegação">
+        <h2 class="footer__title">Navegação</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html">Projetos</a></li>
+          <li><a href="orcamento.html">Orçamento</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Rodapé: serviços">
+        <h2 class="footer__title">Serviços</h2>
+        <ul class="footer__list">
+          <li><a href="servicos.html#sites">Desenvolvimento de sites</a></li>
+          <li><a href="servicos.html#sistemas">Sistemas web</a></li>
+          <li><a href="servicos.html#uiux">Design UI/UX</a></li>
+          <li><a href="servicos.html#automacao">Automação de processos</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer__title">Contato</h2>
+        <!-- PERSONALIZAR: adicione aqui e-mail, telefone e redes sociais oficiais quando existirem.
+             Exemplo: <li><a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a></li> -->
+        <ul class="footer__list">
+          <li><a href="orcamento.html">Fale com a gente pelo formulário</a></li>
+        </ul>
+        <p class="footer__note" style="margin-top:14px">Canais de contato e redes sociais oficiais serão divulgados em breve.</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> ZenIoT. Todos os direitos reservados.</p>
+      <p>Feito com HTML, CSS e JavaScript.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
